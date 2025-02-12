@@ -3,7 +3,7 @@ import string
 from docx import Document
 from docx.shared import Pt
 
-def create_word_search(words, grid_size=20):
+def create_word_search(words, grid_size=20):#this is where to put you grid size(at the 20) 
     grid = [[' ' for _ in range(grid_size)] for _ in range(grid_size)]
     
     def place_word(word):
@@ -58,11 +58,6 @@ def save_grid_to_word(grid, filename):
     
     doc.save(filename)
 
-words = [
-    "Americans", "Wall", "Republican", "President", "GulfofAmerica",
-    "Conservative", "Determined", "Guns", "Twitter", "DOGE", "Musk",
-    "Pardon", "Veto", "Cabinet", "FBI", "Amendment", "Tarriff",
-    "Aluminium", "Steel", "Divisive"
-]
+words = ["ADD","YOUR","WORDS","HERE"]#This is where to put your list of words, in the format shown; no spaces, or it might not work properly.
 grid = create_word_search(words, grid_size=20)
 save_grid_to_word(grid, 'word_search.docx')
